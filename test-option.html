@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>角色分配</title>
+    <!-- 引入js文件 -->
+    <script src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        var leftInputLength = 0;
+        var rightInputLength = 0;
+        $(function(){
+            var optionsOverAll = $("#select11").children();
+            var r_optionsOverAll=$("#select2").children();
+            leftInputLength = $("#unBindKey").val().length;
+            rightInputLength = $("#bindKey").val().length;
+            $("#select1").append(optionsOverAll);
+
+            //移到右边
+            $('#add').bind('click', function() {
+                //获取选中的选项，删除并追加给对方
+                $('#select1 option:selected').appendTo('#select2');
+                r_optionsOverAll=$("#select2").children();
+            });
+            //移到左边
+            $('#remove').bind('click', function() {
+                $('#select2 option:selected').appendTo('#select1');
+                optionsOverAll=$("#select1").children();
+            });
+            //全部移到右边
+            $('#add_all').bind('click', function() {
+                $('#select1 option').appendTo('#select2');
+                r_optionsOverAll=$("#select2").children();
+
+            });
+            //全部移到左边
+            $('#remove_all').bind('click', function() {
+                $('#select2 option').appendTo('#select1');
+                optionsOverAll=$("#select1").children();
+            });
+            //双击选项
+            $('#select1').bind('dblclick', function() { //绑定双击事件
+                //获取全部的选项,删除并追加给对方
+                $("option:selected", this).appendTo('#select2'); //追加给对方
+            });
+            //双击选项
+            $('#select2').bind('dblclick', function() {
+            });
+
+            $("#unBindKey").keyup(function(){
+                var options=optionsOverAll;
+                var key=$(this).val();
+                var add = false;
+                if(leftInputLength > key.length){
+                    add = true;
+                }
+                $.each(options, function(i, option){
+                    if(option.text.indexOf(key)==-1){
+                        $("#select1").find("option[value='"+option.value+"']").remove();
+                    } else {
+                        if(add){
+                            var optemp = $("#select2").children();
+                            var addTemp = true;
+                            if(optemp != null && optemp.length > 0){
+                                for(var i = 0; i < optemp.length; i++){
+                                    if(option.value == optemp[i].value){
+                                        addTemp = false;
+                                        break;
+                                    }
+                                }
+                            }
+                            if(addTemp) {
+                                $("#select1").find("option[value='"+option.value+"']").remove();
+                                var op = "<option value='"+option.value+"'>"+option.text+"</option>";
+                                $("#select1").append(op);
+                            }
+                        }
+                    }
+                });
+                leftInputLength = key.length;
+            });
+
+            $("#bindKey").keyup(function(){
+                var options=r_optionsOverAll;
+                var key=$(this).val();
+                var add = false;
+                if(rightInputLength > key.length){
+                    add = true;
+                }
+                $.each(options, function(i, option){
+                    if(option.text.indexOf(key)==-1){
+                        $("#select2").find("option[value='"+option.value+"']").remove();
+                    } else {
+                        if(add){
+                            var optemp = $("#select1").children();
+                            var addTemp = true;
+                            if(optemp != null && optemp.length > 0){
+                                for(var i = 0; i < optemp.length; i++){
+                                    if(option.value == optemp[i].value){
+                                        addTemp = false;
+                                        break;
+                                    }
+                                }
+                            }
+                            if(addTemp) {
+                                $("#select2").find("option[value='"+option.value+"']").remove();
+                                var op = "<option value='"+option.value+"'>"+option.text+"</option>";
+                                $("#select2").append(op);
+                            }
+                        }
+                    }
+                });
+                rightInputLength = key.length;
+            });
+        });
+    </script>
+</head>
+
+<body>
+<table style="width:500px;height:100%" border="0" cellpadding="5">
+    <tbody>
+    <tr>
+        <td>
+            待分配：<input id="unBindKey" type="text">
+            &nbsp;
+        </td>
+        <td></td>
+        <td>
+            已分配：<input id="bindKey" type="text">
+            &nbsp;
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select style="display: none" id="select11"  multiple="multiple">
+                <option value="1111">1111</option>
+                <option value="2222">2222</option>
+                <option value="1122">1122</option>
+                <option value="3333">3333</option>
+                <option value="1133">1133</option>
+                <option value="5555">5555</option>
+                <option value="5566">5566</option>
+                <option value="6666">6666</option>
+                <option value="1234">1234</option>
+            </select>
+            <select id="select1" style="width: 235px; height: 280px;" multiple="multiple">
+            </select>
+        </td>
+        <td align="center" width="5%">
+            <button type="button" id="add" style="width: 30px;">&gt;</button> <br><br>
+            <button type="button" id="add_all" style="width: 30px;">&gt;&gt;</button> <br><br>
+            <button type="button" id="remove" style="width: 30px;">&lt;</button> <br><br>
+            <button type="button" id="remove_all" style="width: 30px;">&lt;&lt;</button>
+        </td>
+        <td>
+
+            <select  style="width: 235px; height: 280px;" multiple="multiple" id="select2">
+                <option value="111123vbb1">vpx1111</option>
+                <option value="2s2222">2orvq222</option>
+            </select>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

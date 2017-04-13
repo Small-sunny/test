@@ -1,0 +1,30 @@
+.scroll {
+    height:90px;
+    width:50%;
+    max-width:640px;
+    background-color:#000;
+    overflow:hidden;
+    color: white;
+    background: rgb(11, 45, 94);
+    font-family: "Microsoft YaHei", 宋体, "Segoe UI", "Lucida Grande", Helvetica, Arial, sans-serif, FreeSans, Arimo;
+    font-size: 14px;
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    z-index: 2;
+}
+.scroll ul {
+    width:100%;
+    position:absolute;
+    left:0;
+    top:0;
+}
+.scroll li {
+    height:30px;
+    line-height:30px;
+    background: url(../img/list_dot.png) no-repeat;
+    background-position-y:7px;
+    padding-left: 16px;
+
+}
+

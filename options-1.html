@@ -1,0 +1,72 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+<select name="" id="left">
+    <option value="">西瓜</option>
+    <option value="">草莓</option>
+    <option value="">芒果</option>
+    <option value="">橘子</option>
+    <option value="">苹果</option>
+</select>
+<input type="button" id="btn1" value="<<">
+<input type="button" id="btn2" value=">>">
+<input type="button" id="btn3" value="<">
+<input type="button" id="btn4" value=">">
+<select name="" id="right"></select>
+<script>
+var btn1=$('#btn1');
+var btn1=$('#btn1');
+var btn1=$('#btn1');
+var btn1=$('#btn1');
+
+
+</script>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<select id="leftBox" multiple="multiple" style="height: 200px; width: 100px;">
+    <option value="1">a</option>
+    <option value="2">b</option>
+    <option value="3">c</option>
+    <option value="4">d</option>
+</select>
+<input type="button" value=">" onclick="move('leftBox','rightBox')"/>
+<input type="button" value="<" onclick="move('rightBox','leftBox')"/>
+<!--<input type="button" value=">>" onclick="moveAll('leftBox','rightBox')"/>
+<input type="button" value="<<" onclick="moveAll('rightBox','leftBox')"/>    -->
+<select id="rightBox" multiple="multiple" style="height: 200px; width: 100px;">
+    <option value="11">A</option>
+    <option value="22">B</option>
+    <option value="33">C</option>
+    <option value="44">D</option>
+</select>
+
+</body>
+</html>
+<script type="text/javascript">
+    // 移動id為from的列表中的選中項到id為to的列表中
+    function move(from,to) {
+        // 獲取移動源
+        var fromBox = document.getElementById(from);
+        // 獲取移動目的地
+        var toBox = document.getElementById(to);
+        // 當移動源存在選中項時
+        while(fromBox.selectedIndex != -1){
+            // 將移動源中的選中項添加到移動目的地的末尾
+            toBox.appendChild(fromBox.options[fromBox.selectedIndex]);
+        }
+    }
+</script>

@@ -1,0 +1,146 @@
+.flipTimer {
+    font-family: "Helvetica Neue",Helvetica,sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 45px;
+    height: 52px;/*height:45px*/
+    overflow: hidden;
+}
+.flipTimer .seconds {
+    overflow: hidden;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -ms-perspective: 1000px;
+    -o-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    border-radius: 4px;
+}
+.flipTimer .seconds {
+    height: 100%;
+}
+.flipTimer .digit-set {
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.8);
+    width: 7.4%;
+    /*height: 100%;*/
+    display: inline-block;
+    position: relative;
+    margin: 2px 0.25%;
+    text-align: center;
+    height: 50px;
+}
+.flipTimer .digit {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    color: #8b2015;
+}
+.circliful {
+    position: relative;
+}
+
+
+.barControl {
+    margin: 0 auto;
+}
+.barContro_space {
+    margin: 5px 0;
+    background: grey;
+    border-radius: 5px;
+}
+.windu {
+    border-radius: 2px;
+    display: block;
+    box-shadow: 0px 0px 10px 1px #AC85B4, 0 0 1px #AC85B4, 0 0 1px #AC85B4, 0 0 1px #AC85B4, 0 0 1px #AC85B4, 0 0 1px #AC85B4, 0 0 1px #AC85B4;
+    background-color: #fff;
+    height: 4px;
+    width: 49.83%;
+
+}
+
+.flipTimerBox {
+    border: 3px #af742b solid;
+    padding: 1px;
+    border-radius: 6px;
+    margin: 5px 10px 10px;
+    text-align: center;
+}
+.flipTimer .digit-set {
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.8);
+    width: 7.4%;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+    margin: 2px 0.25%;
+    text-align: center;
+    height: 42px;
+}
+.digit-top{
+    background: #fffdf4;
+    border-bottom: 1px solid #ffd5ad;
+    border-radius: 4px;
+    top: 0;
+    -webkit-transform-origin: bottom;
+    -ms-transform-origin: bottom;
+    -moz-transform-origin: bottom;
+    -o-transform-origin: bottom;
+    transform-origin: bottom;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+
+.digit span {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    border-radius: 4px;
+}
+.flipTimer .digit > div.shadow-top {
+    background: -webkit-gradient(linear,0% 0%,0% 100%,from(rgba(255,255,255,1)),to(rgb(255,235,211)));
+    width: 100%;
+    opacity: 0.5;
+}
+
+.shadow-bottom span {
+    top: -21px;
+}
+.digit-bottom, .shadow-bottom {
+    background: #ffe1ae;
+    border-radius: 0 0 4px 4px;
+    top: 21px;
+    -webkit-transform-origin: top;
+    -ms-transform-origin: top;
+    -moz-transform-origin: top;
+    -o-transform-origin: top;
+    transform-origin: top;
+    height: 21px;
+    overflow: hidden;
+}
+.digit-bottom {
+    background: #ffe1ae;
+    border-radius: 0 0 4px 4px;
+    top: 21px;
+    -webkit-transform-origin: top;
+    -ms-transform-origin: top;
+    -moz-transform-origin: top;
+    -o-transform-origin: top;
+    transform-origin: top;
+    height: 21px;
+    overflow: hidden;
+}
+
+.flipTimer .digit > div.shadow-top {
+    background: -webkit-gradient(linear,0% 0%,0% 100%,from(rgba(255,255,255,1)),to(rgb(255,235,211)));
+    width: 100%;
+    opacity: 0.5;
+}
